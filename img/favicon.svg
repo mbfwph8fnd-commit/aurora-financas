@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Aurora Finanças">
+  <defs>
+    <linearGradient id="g" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#0f8a6a"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="14" fill="url(#g)"/>
+  <path d="M10 33a14 14 0 0 1 28 0" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M17 33a7 7 0 0 1 14 0" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" opacity=".75"/>
+  <path d="M24 9v5M12.7 13.7l3.2 3.2M35.3 13.7l-3.2 3.2" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+</svg>
