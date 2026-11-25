@@ -1,0 +1,381 @@
+/* =========================================================
+   Aurora Finanças — estilos próprios
+   Complementa o Tailwind CSS (css/tailwind.css) com os
+   componentes visuais da identidade do sistema.
+   ========================================================= */
+
+:root {
+  --navy: #14223b;
+  --navy-2: #23395d;
+  --surface: #f3f6fb;
+  --ink: #14223b;
+  --muted: #6b7a90;
+  --line: #e6ecf4;
+  --brand: #2563eb;
+  --mint: #0f8a6a;
+  --coral: #e0475b;
+  --amber: #d99a2b;
+  --slate: #94a3b8;
+  --radius: 1.25rem;
+  --shadow: 0 1px 2px rgba(20, 34, 59, 0.04), 0 8px 24px rgba(20, 34, 59, 0.06);
+}
+
+html { scroll-behavior: smooth; }
+
+/* ---------- Acessibilidade ---------- */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 50;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 600;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 1rem; }
+
+a:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.45);
+  outline-offset: 2px;
+}
+
+/* ---------- Menu lateral ---------- */
+.sidebar {
+  background-image: radial-gradient(120% 60% at 0% 0%, rgba(37, 99, 235, 0.25), transparent 60%);
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 0.9rem;
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+.nav-link:hover { background: rgba(255, 255, 255, 0.06); color: #fff; }
+.nav-link-active {
+  background: var(--navy-2);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 #60a5fa;
+}
+
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #60a5fa, #0f8a6a);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.avatar-sm { width: 2.1rem; height: 2.1rem; font-size: 0.75rem; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+.card-title { font-size: 1.125rem; font-weight: 700; letter-spacing: -0.01em; }
+
+.kpi { display: flex; flex-direction: column; gap: 0.6rem; transition: transform 0.2s, box-shadow 0.2s; }
+.kpi:hover, .goal:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(20, 34, 59, 0.1); }
+.goal { transition: transform 0.2s, box-shadow 0.2s; }
+.kpi-value { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+
+.icon-chip {
+  display: inline-grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.8rem;
+}
+
+.badge-up, .badge-down {
+  display: inline-block;
+  margin-right: 0.25rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.badge-up { background: rgba(15, 138, 106, 0.1); color: var(--mint); }
+.badge-down { background: rgba(15, 138, 106, 0.1); color: var(--mint); } /* despesa caindo é boa notícia */
+
+/* ---------- Botões e campos ---------- */
+.btn-primary, .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.btn-primary { background: var(--brand); color: #fff; box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3); }
+.btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
+.btn-secondary { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+.btn-secondary:hover { background: #eef3fb; }
+
+.select-wrap { position: relative; }
+.field-select {
+  appearance: none;
+  padding: 0.7rem 2.4rem 0.7rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.select-icon {
+  position: absolute;
+  right: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--muted);
+}
+
+.link { color: var(--brand); font-size: 0.875rem; font-weight: 600; }
+.link:hover { text-decoration: underline; }
+
+.legend-dot { display: inline-block; width: 0.65rem; height: 0.65rem; border-radius: 999px; flex-shrink: 0; }
+
+/* ---------- Gráfico de barras (fluxo de caixa) ---------- */
+.chart { position: relative; height: 240px; }
+.chart-grid {
+  position: absolute;
+  inset: 0 0 1.75rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.chart-grid span {
+  border-top: 1px dashed var(--line);
+  font-size: 0.65rem;
+  color: var(--muted);
+  line-height: 0;
+  padding-top: 0;
+}
+.chart-grid span::before { content: ""; }
+.chart-bars {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 0.25rem;
+  height: 100%;
+  padding-left: 1.75rem;
+}
+.bar-group { display: flex; flex-direction: column; align-items: center; height: 100%; }
+.bar-pair {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  width: 100%;
+  height: calc(100% - 1.75rem);
+}
+.bar {
+  display: block;
+  width: min(40%, 14px);
+  border-radius: 6px 6px 2px 2px;
+  transition: opacity 0.2s, filter 0.2s;
+}
+.bar-group:hover .bar { filter: brightness(1.1); }
+.chart-bars:hover .bar-group:not(:hover) .bar { opacity: 0.45; }
+.bar-label { margin-top: 0.6rem; font-size: 0.7rem; color: var(--muted); }
+.bar-group-current .bar-label {
+  color: var(--brand);
+  font-weight: 700;
+}
+
+/* ---------- Saúde financeira (gauge) ---------- */
+.gauge {
+  display: grid;
+  place-items: center;
+  width: 11rem;
+  height: 11rem;
+  border-radius: 999px;
+  background: conic-gradient(var(--brand) 0%, var(--mint) 78%, var(--line) 78% 100%);
+}
+.gauge-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 8.6rem;
+  height: 8.6rem;
+  border-radius: 999px;
+  background: #fff;
+}
+
+/* ---------- Rosca de categorias ---------- */
+.donut {
+  display: grid;
+  place-items: center;
+  width: 9.5rem;
+  height: 9.5rem;
+  border-radius: 999px;
+  background: conic-gradient(
+    var(--mint) 0 44%,
+    var(--brand) 44% 73%,
+    var(--amber) 73% 88%,
+    var(--slate) 88% 100%
+  );
+}
+.donut-hole {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 999px;
+  background: #fff;
+}
+.cat-row { display: flex; align-items: center; gap: 0.6rem; }
+.cat-value { margin-left: auto; color: var(--muted); }
+.cat-row strong { width: 2.5rem; text-align: right; }
+
+/* ---------- Barras de progresso ---------- */
+.progress {
+  height: 0.75rem;
+  border-radius: 999px;
+  background: #e8eef8;
+  overflow: hidden;
+}
+.progress-sm { height: 0.5rem; }
+.progress-bar { display: block; height: 100%; border-radius: 999px; }
+
+/* ---------- Vencimentos e dica ---------- */
+.date-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  border-radius: 0.8rem;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.date-chip strong { color: var(--ink); font-size: 1.05rem; line-height: 1; }
+
+.insight {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(15, 138, 106, 0.08));
+  color: var(--navy);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.insight svg { color: var(--amber); margin-top: 0.1rem; }
+
+/* ---------- Tabela de movimentações ---------- */
+.table-head th {
+  background: #eaf1fd;
+  color: var(--brand);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--navy);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+.tx-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
+}
+.tx-out { background: rgba(224, 71, 91, 0.1); color: var(--coral); }
+.tx-in { background: rgba(15, 138, 106, 0.1); color: var(--mint); }
+
+/* ---------- Navegação inferior (celular) ---------- */
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: end;
+  padding: 0.5rem 0.75rem 0.75rem;
+  background: rgba(255, 255, 255, 0.96);
+  border-top: 1px solid var(--line);
+  box-shadow: 0 -8px 24px rgba(20, 34, 59, 0.08);
+}
+/* No computador o menu lateral substitui a barra inferior */
+@media (min-width: 1024px) {
+  .bottom-nav { display: none; }
+}
+.bottom-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.35rem 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+}
+.bottom-link-active { color: var(--brand); font-weight: 700; }
+.bottom-fab {
+  display: grid;
+  place-items: center;
+  justify-self: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  margin-top: -1.6rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.4);
+  border: 4px solid #fff;
+}
+
+/* ---------- Ajustes para telas pequenas ---------- */
+@media (max-width: 640px) {
+  .card { padding: 1.15rem; }
+  .kpi-value { font-size: 1.5rem; }
+  .chart { height: 200px; }
+  .chart-bars { gap: 0.1rem; padding-left: 1.5rem; }
+  .bar { width: 38%; }
+  .bar-label { font-size: 0.6rem; }
+}
+
+/* Respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}
