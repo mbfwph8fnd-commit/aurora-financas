@@ -1,0 +1,24 @@
+/* Arquivo-fonte do Tailwind CSS (v4).
+   Gera o arquivo css/tailwind.css com o comando:
+   npx @tailwindcss/cli -i ./src/input.css -o ./css/tailwind.css --minify */
+@import "tailwindcss";
+
+/* Identidade visual da Aurora Finanças */
+@theme static {
+  --font-sans: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
+
+  --color-navy: #14223b;
+  --color-navy-2: #23395d;
+  --color-surface: #f3f6fb;
+  --color-ink: #14223b;
+  --color-muted: #6b7a90;
+  --color-line: #e6ecf4;
+
+  --color-brand: #2563eb;
+  --color-brand-dark: #1d4ed8;
+  --color-mint: #0f8a6a;
+  --color-mint-dark: #0b6b52;
+  --color-coral: #e0475b;
+  --color-amber: #d99a2b;
+  --color-amber-dark: #a8721a;
+}
