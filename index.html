@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aurora Finanças - visão geral do controle financeiro pessoal">
+  <title>Aurora Finanças | Visão geral</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <!-- Tailwind CSS compilado localmente (funciona sem internet) -->
+  <link rel="stylesheet" href="css/tailwind.css">
+  <!-- Estilos próprios do projeto (gráficos, gauge e detalhes visuais) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-surface font-sans text-ink antialiased">
+
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+  <div class="min-h-screen lg:flex">
+
+    <!-- ===================== MENU LATERAL (desktop) ===================== -->
+    <aside class="sidebar hidden lg:flex lg:w-64 xl:w-72 shrink-0 flex-col bg-navy text-white lg:sticky lg:top-0 lg:h-screen">
+      <div class="px-7 pt-8 pb-10">
+        <a href="index.html" class="flex items-center gap-3" aria-label="Aurora Finanças - início">
+          <img src="img/logo-aurora.svg" alt="" class="h-10 w-10">
+          <span class="leading-tight">
+            <span class="block text-2xl font-bold tracking-tight">aurora</span>
+            <span class="block text-[11px] font-semibold uppercase tracking-[0.2em] text-sky-200/80">Finanças</span>
+          </span>
+        </a>
+      </div>
+
+      <nav aria-label="Menu principal" class="flex-1 px-4">
+        <p class="px-3 pb-2 text-[11px] font-semibold uppercase tracking-widest text-slate-400">Menu</p>
+        <ul class="space-y-1">
+          <li><a href="#" aria-current="page" class="nav-link nav-link-active"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg> Visão geral</a></li>
+          <li><a href="#" class="nav-link"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"></path><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 17.5v-11"></path></svg> Despesas</a></li>
+          <li><a href="#" class="nav-link"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l4 2"></path></svg> Histórico</a></li>
+          <li><a href="#" class="nav-link"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"></path><path d="M2 9v1c0 1.1.9 2 2 2h1"></path><path d="M16 11h.01"></path></svg> Orçamento</a></li>
+          <li><a href="#" class="nav-link"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg> Investimentos</a></li>
+          <li><a href="#" class="nav-link"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> Objetivos</a></li>
+          <li><a href="#" class="nav-link"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg> Dívidas <span class="ml-auto rounded-full bg-amber/20 px-2 py-0.5 text-[10px] font-bold text-amber-200">NOVO</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="m-4 rounded-2xl bg-white/5 p-4">
+        <div class="flex items-center gap-3">
+          <span class="avatar">VF</span>
+          <div class="min-w-0">
+            <p class="truncate text-sm font-semibold">Vanessa Ferreira</p>
+            <p class="truncate text-xs text-slate-400">Minha conta · Perfil</p>
+          </div>
+          <a href="#" class="ml-auto text-slate-400 hover:text-white" aria-label="Configurações"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ===================== CABEÇALHO (mobile) ===================== -->
+    <header class="sticky top-0 z-20 flex items-center justify-between bg-navy px-5 py-4 text-white lg:hidden">
+      <a href="index.html" class="flex items-center gap-2" aria-label="Aurora Finanças - início">
+        <img src="img/logo-aurora.svg" alt="" class="h-8 w-8">
+        <span class="text-xl font-bold tracking-tight">aurora</span>
+      </a>
+      <div class="flex items-center gap-3">
+        <a href="#" class="relative rounded-full p-2 hover:bg-white/10" aria-label="Notificações (2 novas)">
+          <svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+          <span class="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-coral"></span>
+        </a>
+        <span class="avatar avatar-sm">VF</span>
+      </div>
+    </header>
+
+    <!-- ===================== CONTEÚDO PRINCIPAL ===================== -->
+    <main id="conteudo" class="flex-1 px-4 pb-28 pt-6 sm:px-6 lg:px-10 lg:pb-12 lg:pt-10">
+      <div class="mx-auto max-w-7xl">
+
+        <!-- Título da página -->
+        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="text-sm font-medium text-brand">Bom dia, Vanessa 👋</p>
+            <h1 class="mt-1 text-3xl font-bold tracking-tight sm:text-4xl">Visão geral</h1>
+            <p class="mt-1 text-muted">Controle suas finanças com clareza e tranquilidade</p>
+          </div>
+          <div class="flex flex-wrap items-center gap-3">
+            <label for="mes" class="sr-only">Mês de referência</label>
+            <div class="select-wrap">
+              <select id="mes" class="field-select">
+                <option>Outubro 2026</option>
+                <option>Setembro 2026</option>
+                <option>Agosto 2026</option>
+              </select>
+              <svg class="select-icon h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="m6 9 6 6 6-6"></path></svg>
+            </div>
+            <a href="#" class="btn-secondary"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M17 7 7 17"></path><path d="M17 17H7V7"></path></svg> Receita</a>
+            <a href="#" class="btn-primary"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg> Nova despesa</a>
+          </div>
+        </div>
+
+        <!-- ===================== CARDS DE RESUMO ===================== -->
+        <section aria-label="Resumo do mês" class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          <article class="card kpi">
+            <div class="flex items-center justify-between">
+              <h2 class="text-sm text-muted">Saldo do mês</h2>
+              <span class="icon-chip bg-brand/10 text-brand"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg></span>
+            </div>
+            <p class="kpi-value text-brand">R$ 8.450,00</p>
+            <p class="text-xs text-muted"><span class="badge-up">▲ 18,4%</span> em relação a setembro</p>
+          </article>
+
+          <article class="card kpi">
+            <div class="flex items-center justify-between">
+              <h2 class="text-sm text-muted">Receitas</h2>
+              <span class="icon-chip bg-mint/10 text-mint"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M17 7 7 17"></path><path d="M17 17H7V7"></path></svg></span>
+            </div>
+            <p class="kpi-value text-mint">R$ 14.200,00</p>
+            <p class="text-xs text-muted"><span class="badge-up">▲ 5,2%</span> salário + freelas</p>
+          </article>
+
+          <article class="card kpi">
+            <div class="flex items-center justify-between">
+              <h2 class="text-sm text-muted">Despesas</h2>
+              <span class="icon-chip bg-coral/10 text-coral"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></span>
+            </div>
+            <p class="kpi-value text-coral">R$ 5.750,00</p>
+            <p class="text-xs text-muted"><span class="badge-down">▼ 4,2%</span> 88% do orçamento usado</p>
+          </article>
+
+          <article class="card kpi">
+            <div class="flex items-center justify-between">
+              <h2 class="text-sm text-muted">Investido</h2>
+              <span class="icon-chip bg-navy/10 text-navy"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg></span>
+            </div>
+            <p class="kpi-value">R$ 38.920,00</p>
+            <p class="text-xs text-muted"><span class="badge-up">▲ 1,26%</span> rendimento no mês</p>
+          </article>
+        </section>
+
+        <!-- ===================== FLUXO DE CAIXA + SAÚDE FINANCEIRA ===================== -->
+        <div class="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-3">
+
+          <section class="card xl:col-span-2" aria-labelledby="titulo-fluxo">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <h2 id="titulo-fluxo" class="card-title">Evolução do fluxo de caixa</h2>
+                <p class="text-sm text-muted">Receitas x despesas nos últimos 12 meses</p>
+              </div>
+              <ul class="flex gap-4 text-xs text-muted">
+                <li class="flex items-center gap-2"><span class="legend-dot bg-brand"></span>Receitas</li>
+                <li class="flex items-center gap-2"><span class="legend-dot bg-coral"></span>Despesas</li>
+              </ul>
+            </div>
+
+            <div class="chart mt-6">
+              <div class="chart-grid" aria-hidden="true">
+                <span>15k</span><span>10k</span><span>5k</span><span>0</span>
+              </div>
+              <div class="chart-bars">
+                <div class="bar-group">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[79%]" title="Receitas Nov: R$ 11.800"><span class="sr-only">Receitas em Nov: R$ 11.800</span></span>
+                    <span class="bar bg-coral h-[53%]" title="Despesas Nov: R$ 7.900"><span class="sr-only">Despesas em Nov: R$ 7.900</span></span>
+                  </div>
+                  <span class="bar-label">Nov</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[93%]" title="Receitas Dez: R$ 13.900"><span class="sr-only">Receitas em Dez: R$ 13.900</span></span>
+                    <span class="bar bg-coral h-[63%]" title="Despesas Dez: R$ 9.400"><span class="sr-only">Despesas em Dez: R$ 9.400</span></span>
+                  </div>
+                  <span class="bar-label">Dez</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[79%]" title="Receitas Jan: R$ 11.900"><span class="sr-only">Receitas em Jan: R$ 11.900</span></span>
+                    <span class="bar bg-coral h-[54%]" title="Despesas Jan: R$ 8.100"><span class="sr-only">Despesas em Jan: R$ 8.100</span></span>
+                  </div>
+                  <span class="bar-label">Jan</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[81%]" title="Receitas Fev: R$ 12.100"><span class="sr-only">Receitas em Fev: R$ 12.100</span></span>
+                    <span class="bar bg-coral h-[49%]" title="Despesas Fev: R$ 7.300"><span class="sr-only">Despesas em Fev: R$ 7.300</span></span>
+                  </div>
+                  <span class="bar-label">Fev</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[82%]" title="Receitas Mar: R$ 12.300"><span class="sr-only">Receitas em Mar: R$ 12.300</span></span>
+                    <span class="bar bg-coral h-[46%]" title="Despesas Mar: R$ 6.900"><span class="sr-only">Despesas em Mar: R$ 6.900</span></span>
+                  </div>
+                  <span class="bar-label">Mar</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[83%]" title="Receitas Abr: R$ 12.400"><span class="sr-only">Receitas em Abr: R$ 12.400</span></span>
+                    <span class="bar bg-coral h-[45%]" title="Despesas Abr: R$ 6.800"><span class="sr-only">Despesas em Abr: R$ 6.800</span></span>
+                  </div>
+                  <span class="bar-label">Abr</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[84%]" title="Receitas Mai: R$ 12.600"><span class="sr-only">Receitas em Mai: R$ 12.600</span></span>
+                    <span class="bar bg-coral h-[44%]" title="Despesas Mai: R$ 6.600"><span class="sr-only">Despesas em Mai: R$ 6.600</span></span>
+                  </div>
+                  <span class="bar-label">Mai</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[87%]" title="Receitas Jun: R$ 13.000"><span class="sr-only">Receitas em Jun: R$ 13.000</span></span>
+                    <span class="bar bg-coral h-[43%]" title="Despesas Jun: R$ 6.400"><span class="sr-only">Despesas em Jun: R$ 6.400</span></span>
+                  </div>
+                  <span class="bar-label">Jun</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[86%]" title="Receitas Jul: R$ 12.900"><span class="sr-only">Receitas em Jul: R$ 12.900</span></span>
+                    <span class="bar bg-coral h-[45%]" title="Despesas Jul: R$ 6.700"><span class="sr-only">Despesas em Jul: R$ 6.700</span></span>
+                  </div>
+                  <span class="bar-label">Jul</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[88%]" title="Receitas Ago: R$ 13.200"><span class="sr-only">Receitas em Ago: R$ 13.200</span></span>
+                    <span class="bar bg-coral h-[41%]" title="Despesas Ago: R$ 6.100"><span class="sr-only">Despesas em Ago: R$ 6.100</span></span>
+                  </div>
+                  <span class="bar-label">Ago</span>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[90%]" title="Receitas Set: R$ 13.500"><span class="sr-only">Receitas em Set: R$ 13.500</span></span>
+                    <span class="bar bg-coral h-[40%]" title="Despesas Set: R$ 6.000"><span class="sr-only">Despesas em Set: R$ 6.000</span></span>
+                  </div>
+                  <span class="bar-label">Set</span>
+                </div>
+                <div class="bar-group bar-group-current">
+                  <div class="bar-pair">
+                    <span class="bar bg-brand h-[95%]" title="Receitas Out: R$ 14.200"><span class="sr-only">Receitas em Out: R$ 14.200</span></span>
+                    <span class="bar bg-coral h-[38%]" title="Despesas Out: R$ 5.750"><span class="sr-only">Despesas em Out: R$ 5.750</span></span>
+                  </div>
+                  <span class="bar-label">Out</span>
+                </div>
+              </div>
+            </div>
+            <p class="mt-4 rounded-xl bg-mint/10 px-4 py-3 text-sm text-mint-dark">
+              Suas despesas caíram <strong>27%</strong> desde novembro de 2025, enquanto as receitas cresceram <strong>20%</strong>.
+            </p>
+          </section>
+
+          <section class="card flex flex-col" aria-labelledby="titulo-saude">
+            <div class="flex items-center justify-between">
+              <h2 id="titulo-saude" class="card-title">Saúde financeira</h2>
+              <span class="rounded-full bg-mint/10 px-3 py-1 text-xs font-semibold text-mint">Boa</span>
+            </div>
+            <p class="text-sm text-muted">Nota calculada a partir dos seus hábitos</p>
+
+            <div class="gauge mx-auto my-6" role="img" aria-label="Nota de saúde financeira: 78 de 100">
+              <div class="gauge-inner">
+                <span class="text-4xl font-bold">78</span>
+                <span class="text-xs text-muted">de 100</span>
+              </div>
+            </div>
+
+            <ul class="mt-auto space-y-3 text-sm">
+              <li class="flex items-center justify-between gap-3">
+                <span class="flex items-center gap-2"><svg class="h-4 w-4 text-brand" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"></path><path d="M2 9v1c0 1.1.9 2 2 2h1"></path><path d="M16 11h.01"></path></svg> Taxa de poupança</span>
+                <strong class="text-mint">59%</strong>
+              </li>
+              <li class="flex items-center justify-between gap-3">
+                <span class="flex items-center gap-2"><svg class="h-4 w-4 text-brand" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg> Reserva de emergência</span>
+                <strong class="text-amber-dark">25%</strong>
+              </li>
+              <li class="flex items-center justify-between gap-3">
+                <span class="flex items-center gap-2"><svg class="h-4 w-4 text-brand" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg> Dívidas / renda</span>
+                <strong class="text-mint">8%</strong>
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- ===================== CATEGORIAS + ORÇAMENTO + VENCIMENTOS ===================== -->
+        <div class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+          <section class="card" aria-labelledby="titulo-categorias">
+            <h2 id="titulo-categorias" class="card-title">Despesas por categoria</h2>
+            <div class="mt-5 flex flex-col items-center gap-6 sm:flex-row xl:flex-col 2xl:flex-row">
+              <div class="donut shrink-0" role="img" aria-label="Moradia 44%, Alimentação 29%, Transporte 15%, Outros 12%">
+                <div class="donut-hole">
+                  <span class="text-xs text-muted">Total</span>
+                  <span class="text-lg font-bold">R$ 5.750</span>
+                </div>
+              </div>
+              <ul class="w-full space-y-3 text-sm">
+                <li class="cat-row"><span class="legend-dot bg-mint"></span>Moradia<span class="cat-value">R$ 2.530</span><strong>44%</strong></li>
+                <li class="cat-row"><span class="legend-dot bg-brand"></span>Alimentação<span class="cat-value">R$ 1.667</span><strong>29%</strong></li>
+                <li class="cat-row"><span class="legend-dot bg-amber"></span>Transporte<span class="cat-value">R$ 863</span><strong>15%</strong></li>
+                <li class="cat-row"><span class="legend-dot bg-slate-400"></span>Outros<span class="cat-value">R$ 690</span><strong>12%</strong></li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="card" aria-labelledby="titulo-orcamento">
+            <div class="flex items-center justify-between">
+              <h2 id="titulo-orcamento" class="card-title">Orçamento do mês</h2>
+              <a href="#" class="link">Ajustar</a>
+            </div>
+            <p class="mt-4 text-sm text-muted">Usado até agora</p>
+            <p class="text-2xl font-bold">R$ 5.750 <span class="text-base font-medium text-muted">/ R$ 6.500</span></p>
+            <div class="progress mt-3" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Orçamento total utilizado">
+              <span class="progress-bar w-[88%] bg-brand"></span>
+            </div>
+            <p class="mt-2 text-xs text-muted">88% utilizado · restam <strong class="text-ink">R$ 750,00</strong> para 7 dias</p>
+
+            <ul class="mt-6 space-y-4 text-sm">
+              <li>
+                <div class="flex justify-between"><span class="font-medium">Moradia</span><span class="text-muted">R$ 2.200 / 2.500</span></div>
+                <div class="progress progress-sm mt-2"><span class="progress-bar w-[88%] bg-amber"></span></div>
+              </li>
+              <li>
+                <div class="flex justify-between"><span class="font-medium">Alimentação</span><span class="text-muted">R$ 1.430 / 1.700</span></div>
+                <div class="progress progress-sm mt-2"><span class="progress-bar w-[84%] bg-mint"></span></div>
+              </li>
+              <li>
+                <div class="flex justify-between"><span class="font-medium">Transporte</span><span class="text-muted">R$ 890 / 1.100</span></div>
+                <div class="progress progress-sm mt-2"><span class="progress-bar w-[81%] bg-mint"></span></div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="card md:col-span-2 xl:col-span-1" aria-labelledby="titulo-vencimentos">
+            <div class="flex items-center justify-between">
+              <h2 id="titulo-vencimentos" class="card-title">Próximos vencimentos</h2>
+              <span class="icon-chip bg-amber/15 text-amber-dark"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5"></path><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h5"></path><path d="M17.5 17.5 16 16.3V14"></path><circle cx="16" cy="16" r="6"></circle></svg></span>
+            </div>
+            <ul class="mt-4 divide-y divide-line">
+              <li class="flex items-center gap-4 py-3">
+                <span class="date-chip"><strong>25</strong>OUT</span>
+                <div class="min-w-0 flex-1">
+                  <p class="truncate font-medium">Financiamento do carro</p>
+                  <p class="text-xs text-muted">Parcela 14 de 36</p>
+                </div>
+                <span class="font-semibold">R$ 890,00</span>
+              </li>
+              <li class="flex items-center gap-4 py-3">
+                <span class="date-chip"><strong>28</strong>OUT</span>
+                <div class="min-w-0 flex-1">
+                  <p class="truncate font-medium">Fatura cartão de crédito</p>
+                  <p class="text-xs text-muted">Banco Alpha</p>
+                </div>
+                <span class="font-semibold">R$ 1.245,30</span>
+              </li>
+              <li class="flex items-center gap-4 py-3">
+                <span class="date-chip"><strong>05</strong>NOV</span>
+                <div class="min-w-0 flex-1">
+                  <p class="truncate font-medium">Curso de especialização</p>
+                  <p class="text-xs text-muted">Parcela 3 de 10</p>
+                </div>
+                <span class="font-semibold">R$ 420,00</span>
+              </li>
+            </ul>
+
+            <div class="insight mt-4">
+              <svg class="h-5 w-5 shrink-0" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>
+              <p><strong>Dica da Aurora:</strong> se você mantiver o ritmo de outubro, completa a <em>Reserva de emergência</em> 4 meses antes do prazo.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- ===================== ÚLTIMAS MOVIMENTAÇÕES ===================== -->
+        <section class="card mt-6" aria-labelledby="titulo-movimentacoes">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h2 id="titulo-movimentacoes" class="card-title">Últimas movimentações</h2>
+            <a href="#" class="link flex items-center gap-1">Ver histórico completo <svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="m9 18 6-6-6-6"></path></svg></a>
+          </div>
+
+          <!-- Tabela: aparece a partir de tablets -->
+          <div class="mt-4 hidden overflow-x-auto md:block">
+            <table class="w-full text-left text-sm">
+              <thead>
+                <tr class="table-head">
+                  <th scope="col" class="rounded-l-xl px-4 py-3">Descrição</th>
+                  <th scope="col" class="px-4 py-3">Categoria</th>
+                  <th scope="col" class="px-4 py-3">Pagamento</th>
+                  <th scope="col" class="px-4 py-3">Data</th>
+                  <th scope="col" class="rounded-r-xl px-4 py-3 text-right">Valor</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-line">
+                <tr class="hover:bg-surface/70">
+                  <td class="px-4 py-3"><div class="flex items-center gap-3"><span class="tx-icon tx-out"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg></span><div><p class="font-semibold">Supermercado</p><p class="text-xs text-muted">Conta corrente</p></div></div></td>
+                  <td class="px-4 py-3"><span class="tag">Alimentação</span></td>
+                  <td class="px-4 py-3 text-muted">Cartão de crédito</td>
+                  <td class="px-4 py-3 text-muted">09/10/2026</td>
+                  <td class="px-4 py-3 text-right font-semibold text-ink">− R$ 286,40</td>
+                </tr>
+                <tr class="hover:bg-surface/70">
+                  <td class="px-4 py-3"><div class="flex items-center gap-3"><span class="tx-icon tx-out"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg></span><div><p class="font-semibold">Uber</p><p class="text-xs text-muted">Conta corrente</p></div></div></td>
+                  <td class="px-4 py-3"><span class="tag">Transporte</span></td>
+                  <td class="px-4 py-3 text-muted">Pix</td>
+                  <td class="px-4 py-3 text-muted">08/10/2026</td>
+                  <td class="px-4 py-3 text-right font-semibold text-ink">− R$ 42,50</td>
+                </tr>
+                <tr class="hover:bg-surface/70">
+                  <td class="px-4 py-3"><div class="flex items-center gap-3"><span class="tx-icon tx-out"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg></span><div><p class="font-semibold">Farmácia</p><p class="text-xs text-muted">Conta corrente</p></div></div></td>
+                  <td class="px-4 py-3"><span class="tag">Saúde</span></td>
+                  <td class="px-4 py-3 text-muted">Cartão de débito</td>
+                  <td class="px-4 py-3 text-muted">07/10/2026</td>
+                  <td class="px-4 py-3 text-right font-semibold text-ink">− R$ 67,90</td>
+                </tr>
+                <tr class="hover:bg-surface/70">
+                  <td class="px-4 py-3"><div class="flex items-center gap-3"><span class="tx-icon tx-in"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg></span><div><p class="font-semibold">Freelance – site institucional</p><p class="text-xs text-muted">Conta digital</p></div></div></td>
+                  <td class="px-4 py-3"><span class="tag">Receita extra</span></td>
+                  <td class="px-4 py-3 text-muted">Pix</td>
+                  <td class="px-4 py-3 text-muted">06/10/2026</td>
+                  <td class="px-4 py-3 text-right font-semibold text-mint">+ R$ 1.700,00</td>
+                </tr>
+                <tr class="hover:bg-surface/70">
+                  <td class="px-4 py-3"><div class="flex items-center gap-3"><span class="tx-icon tx-out"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M14.4 14.4 9.6 9.6"></path><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"></path><path d="m21.5 21.5-1.4-1.4"></path><path d="M3.9 3.9 2.5 2.5"></path><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"></path></svg></span><div><p class="font-semibold">Academia</p><p class="text-xs text-muted">Conta corrente</p></div></div></td>
+                  <td class="px-4 py-3"><span class="tag">Bem-estar</span></td>
+                  <td class="px-4 py-3 text-muted">Cartão de débito</td>
+                  <td class="px-4 py-3 text-muted">06/10/2026</td>
+                  <td class="px-4 py-3 text-right font-semibold text-ink">− R$ 189,90</td>
+                </tr>
+                <tr class="hover:bg-surface/70">
+                  <td class="px-4 py-3"><div class="flex items-center gap-3"><span class="tx-icon tx-in"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg></span><div><p class="font-semibold">Salário de outubro</p><p class="text-xs text-muted">Conta corrente</p></div></div></td>
+                  <td class="px-4 py-3"><span class="tag">Salário</span></td>
+                  <td class="px-4 py-3 text-muted">Transferência</td>
+                  <td class="px-4 py-3 text-muted">05/10/2026</td>
+                  <td class="px-4 py-3 text-right font-semibold text-mint">+ R$ 12.500,00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Lista em cartões: aparece no celular -->
+          <ul class="mt-4 divide-y divide-line md:hidden">
+            <li class="flex items-center gap-3 py-3">
+              <span class="tx-icon tx-out"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg></span>
+              <div class="min-w-0 flex-1"><p class="truncate font-semibold">Supermercado</p><p class="text-xs text-muted">Alimentação · 09/10</p></div>
+              <span class="whitespace-nowrap font-semibold text-ink">− R$ 286,40</span>
+            </li>
+            <li class="flex items-center gap-3 py-3">
+              <span class="tx-icon tx-out"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg></span>
+              <div class="min-w-0 flex-1"><p class="truncate font-semibold">Uber</p><p class="text-xs text-muted">Transporte · 08/10</p></div>
+              <span class="whitespace-nowrap font-semibold text-ink">− R$ 42,50</span>
+            </li>
+            <li class="flex items-center gap-3 py-3">
+              <span class="tx-icon tx-out"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"></path></svg></span>
+              <div class="min-w-0 flex-1"><p class="truncate font-semibold">Farmácia</p><p class="text-xs text-muted">Saúde · 07/10</p></div>
+              <span class="whitespace-nowrap font-semibold text-ink">− R$ 67,90</span>
+            </li>
+            <li class="flex items-center gap-3 py-3">
+              <span class="tx-icon tx-in"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg></span>
+              <div class="min-w-0 flex-1"><p class="truncate font-semibold">Freelance – site institucional</p><p class="text-xs text-muted">Receita extra · 06/10</p></div>
+              <span class="whitespace-nowrap font-semibold text-mint">+ R$ 1.700,00</span>
+            </li>
+            <li class="flex items-center gap-3 py-3">
+              <span class="tx-icon tx-out"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M14.4 14.4 9.6 9.6"></path><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"></path><path d="m21.5 21.5-1.4-1.4"></path><path d="M3.9 3.9 2.5 2.5"></path><path d="M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z"></path></svg></span>
+              <div class="min-w-0 flex-1"><p class="truncate font-semibold">Academia</p><p class="text-xs text-muted">Bem-estar · 06/10</p></div>
+              <span class="whitespace-nowrap font-semibold text-ink">− R$ 189,90</span>
+            </li>
+            <li class="flex items-center gap-3 py-3">
+              <span class="tx-icon tx-in"><svg class="h-4 w-4" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path><rect width="20" height="14" x="2" y="6" rx="2"></rect></svg></span>
+              <div class="min-w-0 flex-1"><p class="truncate font-semibold">Salário de outubro</p><p class="text-xs text-muted">Salário · 05/10</p></div>
+              <span class="whitespace-nowrap font-semibold text-mint">+ R$ 12.500,00</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ===================== METAS EM DESTAQUE ===================== -->
+        <section class="mt-6" aria-labelledby="titulo-metas">
+          <div class="flex items-center justify-between">
+            <h2 id="titulo-metas" class="card-title">Objetivos em andamento</h2>
+            <a href="#" class="link">Criar objetivo</a>
+          </div>
+          <div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="card goal">
+              <span class="icon-chip bg-brand/10 text-brand"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg></span>
+              <h3 class="mt-4 font-semibold">Reserva de emergência</h3>
+              <p class="text-sm text-muted">R$ 5.000 de R$ 20.000 · até dez/2027</p>
+              <div class="mt-4 flex items-center gap-3">
+                <div class="progress progress-sm flex-1"><span class="progress-bar w-[25%] bg-mint"></span></div>
+                <strong class="text-sm text-mint">25%</strong>
+              </div>
+            </article>
+            <article class="card goal">
+              <span class="icon-chip bg-amber/15 text-amber-dark"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg></span>
+              <h3 class="mt-4 font-semibold">Viagem de férias</h3>
+              <p class="text-sm text-muted">R$ 6.200 de R$ 10.000 · até jul/2027</p>
+              <div class="mt-4 flex items-center gap-3">
+                <div class="progress progress-sm flex-1"><span class="progress-bar w-[62%] bg-mint"></span></div>
+                <strong class="text-sm text-mint">62%</strong>
+              </div>
+            </article>
+            <article class="card goal sm:col-span-2 lg:col-span-1">
+              <span class="icon-chip bg-mint/10 text-mint"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg></span>
+              <h3 class="mt-4 font-semibold">Curso de especialização</h3>
+              <p class="text-sm text-muted">R$ 3.800 de R$ 5.000 · até mar/2027</p>
+              <div class="mt-4 flex items-center gap-3">
+                <div class="progress progress-sm flex-1"><span class="progress-bar w-[76%] bg-mint"></span></div>
+                <strong class="text-sm text-mint">76%</strong>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="mt-10 border-t border-line pt-6 text-center text-xs text-muted">
+          Aurora Finanças © 2026 · Projeto Fintech FIAP · Desenvolvido por Vanessa Alcantara Carreiro Ferreira
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <!-- ===================== NAVEGAÇÃO INFERIOR (mobile) ===================== -->
+  <nav aria-label="Menu principal" class="bottom-nav lg:hidden">
+    <a href="#" aria-current="page" class="bottom-link bottom-link-active"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg><span>Início</span></a>
+    <a href="#" class="bottom-link"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l4 2"></path></svg><span>Histórico</span></a>
+    <a href="#" class="bottom-fab" aria-label="Nova despesa"><svg class="h-6 w-6" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></a>
+    <a href="#" class="bottom-link"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z"></path><path d="M2 9v1c0 1.1.9 2 2 2h1"></path><path d="M16 11h.01"></path></svg><span>Orçamento</span></a>
+    <a href="#" class="bottom-link"><svg class="h-5 w-5" aria-hidden="true" focusable="false" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg><span>Objetivos</span></a>
+  </nav>
+
+</body>
+</html>
